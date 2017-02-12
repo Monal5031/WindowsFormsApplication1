@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -19,14 +20,31 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<int> nlist = new List<int>(); 
-            int l = Int32.Parse(textBox1.Text);
-            int u = Int32.Parse(textBox2.Text);
-            for (int i = l; i < u; i++)
+            Random Rand = new Random();
+            List<string> nlist = new List<string>(); 
+            int n = int.Parse(textBox1.Text);
+            int l = int.Parse(textBox2.Text);
+            int u = int.Parse(textBox3.Text);
+            for (int i = 0; i < n; i++)
             {
-                
+                long g = Rand.Next(l, u);
+                nlist.Add(g.ToString());
             }
+            Clipboard.Clear();
+            string s1 = "";
+            foreach (object item in nlist) s1 += item.ToString() + "\r\n";
+            Clipboard.SetText(s1);
+            MessageBox.Show("Copied to clipboard.");
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
