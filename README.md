@@ -11,6 +11,7 @@ For n < 10000 directly copies the output to clipboard. For n>10000 creates a tex
 
 
 issues:-
+
 1.  For output less than 10000 it takes less than 1 sec to copy into the clipboard. For greater than 10000, it's just not doing         anything.(Stucking somewhere at 10%)
 
 2. Taking too much time to create txt files.
